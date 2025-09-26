@@ -172,7 +172,7 @@ const RewardPage = () => {
  useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  
+
   const [step, setStep] = useState(1)
   const [fullName, setFullName] = useState("")
   const [phone, setPhone] = useState("")
