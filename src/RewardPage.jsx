@@ -160,7 +160,7 @@
 
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
-import "./Reward.css"
+import "./App.css"
 
 const RewardPage = () => {
   const location = useLocation()
