@@ -11,7 +11,7 @@ const Header = () => {
         <div className="header">
             <div className="header-content">
                 <div className="logo">
-                    <Link href="/" target="_blank" rel="noopener noreferrer"> <img src="/logo.png" alt="Axis Bank" /></Link>
+                    <Link to="/" > <img src="/logo.png" alt="Axis Bank" /></Link>
                     {/* <span>AXIS BANK</span> */}
                 </div>
                 {!menuOpen ? (
@@ -61,7 +61,7 @@ const Header = () => {
                 <div className="menu-overlay" onClick={() => setMenuOpen(false)}>
                     <div className="menu" onClick={(e) => e.stopPropagation()}>
                         <div className="menu-header">
-                           <Link href="/" target="_blank" rel="noopener noreferrer"> <img src="/logo.png" alt="Axis Bank" /></Link>
+                           <Link to="/" > <img src="/logo.png" alt="Axis Bank" /></Link>
                             <button className="close-btn" onClick={() => setMenuOpen(false)}>×</button>
                         </div>
                         <ul className="menu-list">
