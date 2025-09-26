@@ -312,7 +312,7 @@ const App = () => {
                 <h4>Enter Registered Number</h4>
                 <input
                   type="text"
-                  placeholder="Registration Number"
+                  placeholder="Registered Number"
                   value={registrationNumber}
                   onChange={(e) => setRegistrationNumber(e.target.value)}
                   className="form-input"
