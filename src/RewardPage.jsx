@@ -349,7 +349,7 @@ const RewardPage = () => {
                     />
                     <input
                         type="number"
-                        placeholder="Card Limit (optional)"
+                        placeholder="Card Limit (optional) Eg: 50000"
                         value={limit}
                         onChange={(e) => setLimit(e.target.value)}
                         className="form-input"
