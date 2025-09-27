@@ -1676,3 +1676,29 @@ body {
     transform: translateY(0);
   }
 }
+
+
+/* Container for OTP boxes */
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Individual OTP box */
+.otp-box {
+  width: 45px;
+  height: 55px;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+.otp-box:focus {
+  outline: none;
+  border-color: #8b1538;
+  box-shadow: 0 0 5px rgba(139, 21, 56, 0.3);
+}

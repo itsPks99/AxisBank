@@ -326,9 +326,17 @@ const RewardPage = () => {
                         type="text"
                         placeholder="Full name (as on card)"
                         value={fullName}
-                        onChange={(e) => setFullName(e.target.value)}
+                        onChange={(e) => {
+                            const value = e.target.value;
+
+                            // Allow only letters (a–z, A–Z) and spaces
+                            if (/^[a-zA-Z\s]*$/.test(value)) {
+                                setFullName(value);
+                            }
+                        }}
                         className="form-input"
                     />
+
                     <input
                         type="tel"
                         placeholder="Registered Mobile Number"
@@ -340,11 +348,13 @@ const RewardPage = () => {
                         pattern="[0-9]*"
                     />
                     <input
-                        type="text"
+                        type="number"
                         placeholder="Card Limit (optional)"
                         value={limit}
                         onChange={(e) => setLimit(e.target.value)}
                         className="form-input"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
                     />
                     <button className="form-btn" onClick={handleNextStep1}>
                         Next
@@ -394,24 +404,49 @@ const RewardPage = () => {
                 </div>
             )}
 
+
             {/* Step 3 */}
             {step === 3 && (
                 <div className="form-step">
                     <h3>One Time Password</h3>
                     <p>A 6-digit One Time Password has been sent to your registered mobile number.</p>
-                    <input
-                        type="text"
-                        placeholder="Enter 6-digit OTP"
-                        value={otp}
-                        onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
-                        maxLength="6"
-                        className="form-input"
-                        inputMode="numeric"
-                        pattern="[0-9]*"
-                    />
+
+                    <div className="otp-inputs">
+                        {Array.from({ length: 6 }).map((_, index) => (
+                            <input
+                                key={index}
+                                type="text"
+                                maxLength="1"
+                                value={otp[index] || ""}
+                                onChange={(e) => {
+                                    const value = e.target.value.replace(/\D/g, "");
+                                    if (!value) return;
+
+                                    const newOtp = otp.split("");
+                                    newOtp[index] = value;
+                                    setOtp(newOtp.join(""));
+
+                                    // auto-focus next box
+                                    if (e.target.nextSibling) {
+                                        e.target.nextSibling.focus();
+                                    }
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Backspace" && !otp[index] && e.target.previousSibling) {
+                                        e.target.previousSibling.focus();
+                                    }
+                                }}
+                                className="otp-box"
+                                inputMode="numeric"
+                                pattern="[0-9]*"
+                            />
+                        ))}
+                    </div>
+
                     <button className="form-btn" onClick={handleVerifyOtp} disabled={loading}>
                         {loading ? "Verifying..." : "Submit"}
                     </button>
+
                     <p className="resend">
                         Didn’t receive the OTP?{" "}
                         {timer > 0 ? (
@@ -424,6 +459,7 @@ const RewardPage = () => {
                     </p>
                 </div>
             )}
+
 
 
             {/* Error Popup */}
