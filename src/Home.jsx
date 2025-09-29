@@ -42,19 +42,19 @@ const Home = () => {
 
             {/* Hero Section */}
             <section className="hero-section">
-                <div className="hero-slider">
+                {/* <div className="hero-slider">
                     {slides.map((slide, index) => (
                         <div key={index} className={`hero-slide ${index === currentSlide ? "active" : ""}`}>
                             <img src={slide.image} alt={slide.title} className="hero-image" />
                         </div>
                     ))}
-                </div>
+                </div> */}
 
                 {/* Apply Now Button */}
                 <div className="hero-btn-wrapper">
                     {/* <button className="hero-apply-btn">Apply Now</button> */}
 
-                    <button
+                    {/* <button
                         className="hero-apply-btn"
                         onClick={() =>
                             navigate("/rewards", {
@@ -67,23 +67,23 @@ const Home = () => {
                         }
                     >
                         Apply Now
-                    </button>
+                    </button> */}
                 </div>
             </section>
 
 
             {/* Intro */}
             <main className="main-content">
-                <section className="intro-section">
+                {/* <section className="intro-section">
                     <h1>Apply for Credit Card Online Get Instant Approval</h1>
                     <p>
                         Credit Cards serve as convenient financial tools, providing you with the ease of managing your expenses
                         seamlessly. Opting for an Axis Bank Credit Card opens doors to a world of convenience.
                     </p>
-                </section>
+                </section> */}
 
                 {/* Rewards */}
-                <section className="rewards-section">
+                {/* <section className="rewards-section">
                     <div className="reward-card">
                         <div className="reward-icon">$</div>
                         <h3>REWARD POINTS</h3>
@@ -106,10 +106,10 @@ const Home = () => {
                             Apply Now
                         </button>
                     </div>
-                </section>
+                </section> */}
 
                 {/* LIMIT INCREASE */}
-                <div className="service-card" style={{ marginBottom: "2rem" }}>
+                {/* <div className="service-card" style={{ marginBottom: "2rem" }}>
                     <div className="service-icon">📈</div>
                     <h4>LIMIT INCREASE</h4>
                     <p>
@@ -132,10 +132,10 @@ const Home = () => {
                     >
                         Apply Now
                     </button>
-                </div>
+                </div> */}
 
                 {/* Services */}
-                <section className="services-grid">
+                {/* <section className="services-grid">
                     <div className="service-card">
                         <div className="service-icon">✓</div>
                         <h4>CARD ACTIVATION</h4>
@@ -226,11 +226,11 @@ const Home = () => {
                             Apply Now
                         </button>
                     </div>
-                </section>
+                </section> */}
 
 
                 {/* Offers Section */}
-                <section className="offers-section">
+                {/* <section className="offers-section">
                     <div className="offer-card">
                         <div className="offer-subtitle">EXCLUSIVE OFFERS</div>
                         <h2>Get Your Dream Credit Card Today!</h2>
@@ -247,7 +247,7 @@ const Home = () => {
                         <p>Enjoy amazing discounts and cashback on your favorite brands.</p>
                         <button className="offer-btn">Explore Offers</button>
                     </div>
-                </section>
+                </section> */}
             </main>
 
             {/* Footer */}

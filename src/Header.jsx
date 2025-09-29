@@ -8,11 +8,11 @@ const Header = () => {
 
     return (
         <>
-        <div className="header">
+        {/* <div className="header">
             <div className="header-content">
                 <div className="logo">
                     <Link to="/" > <img src="/logo.png" alt="Axis Bank" /></Link>
-                    {/* <span>AXIS BANK</span> */}
+                   
                 </div>
                 {!menuOpen ? (
                     <button className="menu-btn" onClick={() => setMenuOpen(true)}>☰</button>
@@ -21,9 +21,9 @@ const Header = () => {
                 )}
             </div>
         </div>
-        
+         */}
         {/* Login Modal */}
-            {showLoginModal && (
+            {/* {showLoginModal && (
                 <div className="modal-overlay" onClick={() => setShowLoginModal(false)}>
                     <div className="modal" onClick={(e) => e.stopPropagation()}>
                         <div className="modal-header">
@@ -53,11 +53,11 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
 
 
             {/* Hamburger Menu */}
-            {menuOpen && (
+            {/* {menuOpen && (
                 <div className="menu-overlay" onClick={() => setMenuOpen(false)}>
                     <div className="menu" onClick={(e) => e.stopPropagation()}>
                         <div className="menu-header">
@@ -75,7 +75,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
         </>
 
         
